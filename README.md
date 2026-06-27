@@ -15,4 +15,4 @@ npm run build
 Публикация выполняется автоматически через GitHub Actions после push в ветку `main`.
 Workflow собирает проект из папки `ConsoleApp1/prf` и публикует содержимое `dist` в GitHub Pages.
 
-Ссылка на опубликованный проект: `https://haha4un.github.io/meo/`
+Ссылка на опубликованный проект: `https://glebkaescov630-a11y.github.io/mesto-ad/`
