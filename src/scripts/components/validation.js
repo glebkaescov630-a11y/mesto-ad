@@ -1,7 +1,3 @@
-const validationMessages = {
-  textPattern: "Разрешены только латинские и кириллические буквы, дефисы и пробелы.",
-};
-
 export const showInputError = (formElement, inputElement, errorMessage, config) => {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
 
@@ -19,14 +15,9 @@ export const hideInputError = (formElement, inputElement, config) => {
 };
 
 export const checkInputValidity = (formElement, inputElement, config) => {
-  if (inputElement.validity.patternMismatch) {
-    inputElement.setCustomValidity(validationMessages.textPattern);
-  } else {
-    inputElement.setCustomValidity("");
-  }
-
   if (!inputElement.validity.valid) {
-    showInputError(formElement, inputElement, inputElement.validationMessage, config);
+    const errorMessage = inputElement.dataset.errorMessage || inputElement.validationMessage;
+    showInputError(formElement, inputElement, errorMessage, config);
   } else {
     hideInputError(formElement, inputElement, config);
   }
