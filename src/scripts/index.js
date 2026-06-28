@@ -184,6 +184,7 @@ const handleInfoClick = (cardId) => {
       cardInfoModalTitle.textContent = "Информация о карточке";
       cardInfoModalText.textContent = "Поставили лайк:";
       cardInfoModalInfoList.replaceChildren(
+        createInfoString("Название:", cardData.name),
         createInfoString("Автор:", cardData.owner.name),
         createInfoString("Дата создания:", formatDate(new Date(cardData.createdAt))),
         createInfoString("Количество лайков:", cardData.likes.length)
